@@ -3,7 +3,7 @@
 Get 
 
 ```
-$ curl -s https://git.ysz.io/vimrc/get | bash
+$ curl -Ls vim.ysz.io | bash
 Hello, world
 ```
 
@@ -24,3 +24,7 @@ Hello, world
     add CNAME git. point to ysz.github.io. 
 
     check git.ysz.io/vimrc is up  
+
+- setup URL Redirect Record
+
+    vim to https://raw.githubusercontent.com/ysz/vimrc/master/get
