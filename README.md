@@ -1,6 +1,13 @@
 # Yakov's .vimrc 
 
-how his repo was created 
+Get 
+
+```
+$ curl -s https://git.ysz.io/vimrc/get | bash
+Hello, world
+```
+
+# how his repo was created 
 
 - create repo 
 
