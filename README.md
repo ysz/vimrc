@@ -7,6 +7,8 @@ $ curl -Ls vim.ysz.io | bash
 Hello, world
 ```
 
+On macOS `brew install vim` 
+
 # how his repo was created 
 
 - create repo 
