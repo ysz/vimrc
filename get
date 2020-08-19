@@ -1,6 +1,14 @@
 #!/bin/bash
 
-# echo Hello, world
-git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
-vim +GoInstallBinaries +qall
+if [ ! -d $HOME/.vim/pack/plugins/start/vim-go ]; then
+	git clone https://github.com/fatih/vim-go.git \
+		$HOME/.vim/pack/plugins/start/vim-go
+	vim +GoInstallBinaries +qall
+fi
+
+if [ ! -f $HOME/.vim/colors/hhazure.vim ]; then
+	mkdir -p $HOME/.vim/colors
+	curl -sL https://www.vim.org/scripts/download_script.php?src_id=2526 |\
+	       	tar --strip-components=1 -C $HOME/.vim/colors -xv
+fi
 
