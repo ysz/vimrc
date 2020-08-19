@@ -9,6 +9,33 @@ fi
 if [ ! -f $HOME/.vim/colors/hhazure.vim ]; then
 	mkdir -p $HOME/.vim/colors
 	curl -sL https://www.vim.org/scripts/download_script.php?src_id=2526 |\
-	       	tar --strip-components=1 -C $HOME/.vim/colors -xv
+	       	tar --strip-components=1 -C $HOME/.vim/colors -zxv
+fi
+
+if [ ! -f $HOME/.bash_aliases ]; then
+	cat > $HOME/.bash_aliases <<EOF
+shopt -s expand_aliases
+alias gst='git status' 
+alias gsu='git status -uno'
+alias ga='git add'
+alias gap='git add -p'
+alias gc='git commit -m'
+alias gsc='git commit -S -m'
+alias gp='git pull && git push --recurse-submodules=check'
+alias gull='git pull'
+alias gush='git push --recurse-submodules=check'
+alias gb='git branch'
+alias gco='git checkout'
+alias gd='git diff'
+alias gds='git diff --staged'
+alias glo='git log --oneline | head -10'
+function gs() {
+git show \`git log --oneline | grep "$1" | awk '{print $1}'\`
+}
+alias k=kubectl
+complete -F __start_kubectl k
+EOF
+	echo 'set -o vi' >> $HOME/.bash_profile
+	echo 'set show-mode-in-prompt on' > $HOME/.inputrc
 fi
 

@@ -7,6 +7,14 @@ $ curl -Ls vim.ysz.io | bash
 Hello, world
 ```
 
+Build static vim 
+
+```
+cd vim-build
+docker build -t vim . 
+docker cp $(docker create vim):/vim/src/vim .
+```
+
 On macOS `brew install vim` 
 
 # how his repo was created 
